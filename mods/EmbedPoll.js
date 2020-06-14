@@ -69,14 +69,14 @@ module.exports = {
 
     // Place your mod here.
     mod: async function (DBS, message, action, args) {
-        const emojiArray = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
+        const emojiArray = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣","🔟"];
         try {
             // Replaces %%variables%% with their value from cache
             var newaction = DBS.Cache.ParseAction(action, message.guild);
 
             // Get array of poll options based on comma separated list
             var options = newaction.options.split(",");
-            if (options.length > 0 && options.length < 11) {
+            if (options.length > 0 && options.length < 12) {
                 const Embed = new DBS.Discord.RichEmbed()
                     .setColor(newaction.color)
                     .setTitle(newaction.title)
